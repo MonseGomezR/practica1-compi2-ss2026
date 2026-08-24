@@ -1,0 +1,233 @@
+* {
+    -fx-font-family: "Consolas", "Cascadia Mono", monospace;
+}
+
+.root {
+    -fx-background-color: #0a0e0a;
+}
+
+/* ---------- Barra de menú ---------- */
+.menu-bar {
+    -fx-background-color: #111511;
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 0 0 2 0;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #7fd97f;
+    -fx-font-weight: bold;
+}
+
+.menu-item .label {
+    -fx-text-fill: #c8e6c8;
+}
+
+.menu-item:focused {
+    -fx-background-color: #1f3d1f;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: #ffffff;
+}
+
+.context-menu {
+    -fx-background-color: #111511;
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 1;
+}
+
+/* ---------- Paneles generales ---------- */
+.split-pane {
+    -fx-background-color: #0a0e0a;
+}
+
+.split-pane-divider {
+    -fx-background-color: #1a2e1a;
+    -fx-padding: 0 1 0 1;
+}
+
+.scroll-pane, .scroll-pane .viewport {
+    -fx-background-color: #0a0e0a;
+}
+
+/* ---------- Etiquetas / texto general ---------- */
+.label {
+    -fx-text-fill: #a8d5a8;
+}
+
+.ventana-secundaria {
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 1;
+}
+
+/* ---------- Botones estilo "consola de comandos" ---------- */
+.button {
+    -fx-background-color: #16261a;
+    -fx-text-fill: #7fd97f;
+    -fx-border-color: #3d7a3d;
+    -fx-border-width: 1;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-font-weight: bold;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #234023;
+    -fx-border-color: #7fd97f;
+    -fx-text-fill: #ffffff;
+}
+
+.button:pressed {
+    -fx-background-color: #0f1c0f;
+}
+
+/* ---------- ListView (consola de errores / log) ---------- */
+.list-view {
+    -fx-background-color: #0d120d;
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 1;
+}
+
+.list-cell {
+    -fx-background-color: #0d120d;
+    -fx-text-fill: #d8f5d8;
+    -fx-padding: 4 8 4 8;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #1a2e1a;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #2d5c2d;
+    -fx-text-fill: #ffffff;
+}
+
+/* Errores se ven en rojo alerta (patrón "cerdo detectado") */
+.list-cell.celda-error {
+    -fx-text-fill: #ff6b6b;
+}
+
+/* ---------- TableView (tabla de símbolos) ---------- */
+.table-view {
+    -fx-background-color: #0d120d;
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 1;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #16261a;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #7fd97f;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+}
+
+.table-row-cell {
+    -fx-background-color: #0d120d;
+    -fx-text-fill: #d8f5d8;
+    -fx-border-color: transparent transparent #1a2e1a transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #0f150f;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2d5c2d;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .filler { -fx-background-color: #16261a; }
+
+/* ---------- TreeView (por si acaso lo vuelves a usar) ---------- */
+.tree-view {
+    -fx-background-color: #0d120d;
+    -fx-border-color: #2d5c2d;
+}
+.tree-cell {
+    -fx-background-color: #0d120d;
+    -fx-text-fill: #d8f5d8;
+}
+.tree-cell:selected {
+    -fx-background-color: #2d5c2d;
+    -fx-text-fill: #ffffff;
+}
+
+/* ---------- TextArea (vista PigLatin) ---------- */
+.text-area, .text-area .content {
+    -fx-background-color: #0d120d;
+}
+.text-area .text {
+    -fx-fill: #d8f5d8;
+}
+.text-area {
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 1;
+}
+
+/* ---------- CodeArea (editor principal, RichTextFX) ---------- */
+.code-area {
+    -fx-background-color: #0a0e0a;
+}
+.code-area .text {
+    -fx-fill: #d8f5d8;
+}
+
+.lineno {
+    -fx-background-color: #111511;
+    -fx-text-fill: #3d7a3d;
+    -fx-padding: 0 10 0 8;
+    -fx-border-color: transparent #2d5c2d transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.virtualized-scroll-pane,
+.virtualized-scroll-pane .viewport {
+    -fx-background-color: #0a0e0a;
+}
+
+/* Coloreado de sintaxis - paleta "terminal de guerrilla" */
+.palabra-clave { -fx-fill: #ff8fab; -fx-font-weight: bold; }   /* rosa alerta - control de flujo */
+.tipo-dato     { -fx-fill: #5ce1e6; }                          /* cian - tipos de datos */
+.cadena        { -fx-fill: #ffd166; }                          /* ámbar - literales de texto */
+.numero        { -fx-fill: #7fd97f; }                          /* verde resistencia - números */
+.comentario    { -fx-fill: #4a6b4a; -fx-font-style: italic; }  /* verde apagado - comentarios */
+
+/* ---------- Barra de estado inferior ---------- */
+.status-bar {
+    -fx-background-color: #111511;
+    -fx-border-color: #2d5c2d;
+    -fx-border-width: 2 0 0 0;
+}
+.status-bar .label {
+    -fx-text-fill: #7fd97f;
+    -fx-font-weight: bold;
+}
+
+/* ---------- Estilo especial para títulos de sección ---------- */
+.titulo-seccion {
+    -fx-text-fill: #ff8fab;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* ---------- ScrollBars con estética de terminal ---------- */
+.scroll-bar {
+    -fx-background-color: #111511;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #2d5c2d;
+    -fx-background-radius: 2;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #3d7a3d;
+}
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #111511;
+}

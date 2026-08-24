@@ -1,0 +1,24 @@
+.code-area .text.palabra-clave { -fx-fill: #ff8fab; -fx-font-weight: bold; }   /* rosa alerta - control de flujo */
+.code-area .text.tipo-dato     { -fx-fill: #5ce1e6; }                         /* cian - tipos de datos */
+.code-area .text.cadena        { -fx-fill: #ffd166; }                         /* ámbar - literales de texto */
+.code-area .text.numero        { -fx-fill: #7fd97f; }                         /* verde resistencia - números */
+.code-area .text.comentario    { -fx-fill: #4a6b4a; -fx-font-style: italic; } /* verde apagado - comentarios */
+.code-area .text.error-lexico {
+    -fx-fill: #ff3b3b;
+    -fx-underline: true;
+    -fx-font-weight: bold;
+}
+
+.code-area {
+    -fx-background-color: #0a0e0a;
+}
+.code-area .text { -fx-fill: #d8f5d8; }
+
+.lineno {
+    -fx-background-color: #111511;
+    -fx-text-fill: #3d7a3d;
+    -fx-padding: 0 10 0 8;
+    -fx-font-family: "Consolas", monospace;
+    -fx-border-color: transparent #2d5c2d transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}

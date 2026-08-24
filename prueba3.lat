@@ -1,0 +1,21 @@
+VARIABILES>
+esto edad numerus 20;
+esto nombre : textum "Sin punto y coma"
+
+MUNERA>
+ratio numerus calcular(esto x numerus) {
+    reddere x * 2;
+} finis;
+
+MAIOR>
+si (edad > 18 {
+    >> "Falta parentesis de cierre";
+} finis;
+
+dum edad < 100) {
+    edad = edad + 1;
+} finis;
+
+esto y = 10;
+
+FINIS;

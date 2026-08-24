@@ -1,0 +1,44 @@
+VARIABILES>
+esto bandera1 : verum;
+esto bandera2: falsus;
+esto nombre : textum;
+esto edad : numerus;
+esto letra : littera 'x';
+esto pi : decimalis 3.14;
+
+MUNERA>
+actio inicializar() {
+    >> "Inicializando sistema...";
+} finis;
+
+ratio numerus doble(esto x : numerus) {
+    reddere x * 2;
+} finis;
+
+MAIOR>
+inicializar();
+
+>> "Ingresa tu nombre";
+nombre <<
+
+>> "Ingresa tu edad";
+<< edad
+
+si (edad >= 18) {
+    >> "Eres mayor de edad";
+} finis;
+
+esto resultado : numerus doble(21);
+>> "El doble es:" >> resultado;
+
+si (bandera1 || bandera2) {
+    >> "Al menos una bandera activa";
+}
+finis;
+
+esto x : numerus 0;
+per (x = 0; x < 5; x++) {
+    >> x;
+}
+
+FINIS;

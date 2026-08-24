@@ -1,0 +1,165 @@
+##
+  ============================================================
+  KILLER LIMPIO - Programa 100% valido, sin errores esperados
+  Ejercita: tipos primitivos, bool (ambas formas), arreglos,
+  structuras (definicion/instancia/anidada), funciones (actio/ratio,
+  recursion), control de flujo (si/aliter, dum, facere-dum, per,
+  perge/interrumpe), lectura/escritura, operadores.
+  ============================================================
+##
+
+VARIABILES>
+
+// --- Structuras ---
+structura Punto {
+    esto x: decimalis,
+    esto y: decimalis
+} finis;
+
+structura Persona {
+    esto nombre: textum,
+    esto edad: numerus,
+    esto activo: bool,
+    esto ubicacion: Punto,
+    esto salario: decimalis
+} finis;
+
+structura Empresa {
+    esto nombre: textum,
+    series empleados: Persona,
+    esto presupuesto: decimalis,
+    esto activa: bool
+} finis;
+
+// --- Variables primitivas ---
+esto version: textum "1.0.0";
+esto contador: numerus 0;
+esto pi: decimalis 3.14159;
+esto inicial: littera 'A';
+esto activoGlobal: bool verum;
+esto inactivoGlobal: falsus;              // forma especial sin tipo, confirmada valida
+
+// --- Arreglos de primitivos ---
+series numeros[5]: numerus {1, 2, 3, 4, 5};
+series nombres[3]: textum {"Ana", "Luis", "Marta"};
+series flags[2]: bool {verum, falsus};
+
+// --- Instancias de structuras ---
+esto origen: Punto { x: 0.0, y: 0.0 };
+esto empleado1: Persona {
+    nombre: "Carlos",
+    edad: 30,
+    activo: verum,
+    ubicacion: origen,
+    salario: 5000.0
+};
+esto empresa: Empresa {
+    nombre: "TechCorp",
+    presupuesto: 1000000.0,
+    activa: verum
+};
+
+// --- Variables auxiliares para resultados de MAIOR> ---
+esto sumaResultado: numerus 0;
+esto productoResultado: numerus 0;
+esto potenciaResultado: numerus 0;
+esto esAdulto: bool falsus;
+esto p2: Punto { x: 0.0, y: 0.0 };
+esto edadLeida: numerus 0;
+
+MUNERA>
+
+ratio numerus sumar(esto a: numerus, esto b: numerus) {
+    reddere a + b;
+} finis;
+
+ratio numerus multiplicar(esto a: numerus, esto b: numerus) {
+    reddere a * b;
+} finis;
+
+ratio numerus potencia(esto base: numerus, esto exponente: numerus) {
+    si (exponente == 0) {
+        reddere 1;
+    } aliter {
+        reddere base * potencia(base, exponente - 1);
+    } finis;
+} finis;
+
+ratio bool esMayorDeEdad(esto edad: numerus) {
+    si (edad >= 18) {
+        reddere verum;
+    } aliter {
+        reddere falsus;
+    } finis;
+} finis;
+
+ratio Punto obtenerOrigen() {
+    reddere origen;
+} finis;
+
+actio saludar(esto nombre: textum) {
+    >> "Hola, " >> nombre >> "!";
+} finis;
+
+MAIOR>
+
+    // --- Llamadas a funciones y asignaciones ---
+    sumaResultado = sumar(contador, 10);
+    productoResultado = multiplicar(sumaResultado, 2);
+    potenciaResultado = potencia(2, 5);
+    esAdulto = esMayorDeEdad(empleado1.edad);
+    p2 = obtenerOrigen();
+    saludar(empleado1.nombre);
+
+    // --- Operadores aritmeticos, relacionales y logicos ---
+    si (sumaResultado > 5 && esAdulto) {
+        >> "sumaResultado es mayor a 5 y empleado1 es mayor de edad";
+    } aliter (sumaResultado == 5 || non esAdulto) {
+        >> "caso alternativo";
+    } aliter {
+        >> "ningun caso anterior aplico";
+    } finis;
+
+    // --- Acceso y modificacion de campos de structura ---
+    empleado1.salario = empleado1.salario + 500.0;
+    empleado1.ubicacion.x = empleado1.ubicacion.x + 1.0;
+
+    // --- Arreglo de structuras: asignacion de un elemento ---
+    
+
+    // --- Recorrido de arreglo con per, indexado y concatenacion ---
+    per (esto i: numerus 0; i < 5; i++) {
+        >> "numeros[" >> i >> "] = " >> numeros[i];
+    }
+
+    // --- Incremento/decremento sueltos ---
+    contador++;
+    contador--;
+
+    // --- dum con interrumpe ---
+    esto j: numerus 0;
+    dum (j < 10) {
+        si (j == 3) {
+            interrumpe;
+        } finis;
+        j = j + 1;
+    } finis;
+
+    // --- facere...dum con perge ---
+    esto k: numerus 0;
+    facere {
+        k = k + 1;
+        si (k == 2) {
+            perge;
+        } finis;
+        >> "k = " >> k;
+    } dum (k < 4);
+
+    // --- Lectura ---
+    >> "Ingresa tu edad:";
+    edadLeida <<
+
+    // --- Mensaje final ---
+    >> "Fin del programa - KillerLimpio sin errores";
+
+FINIS;

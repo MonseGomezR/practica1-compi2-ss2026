@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.compi2.codexlatinus.gui.controllers.AstController"
+            fitToWidth="false" fitToHeight="false"
+            pannable="true">
+    <content>
+        <Pane fx:id="lienzo" style="-fx-background-color: white;" minWidth="1200" minHeight="800"/>
+    </content>
+</ScrollPane>

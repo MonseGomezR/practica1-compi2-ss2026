@@ -1,0 +1,92 @@
+# ==============================
+# Java / Maven
+# ==============================
+
+# Compilación
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ==============================
+# IDEs
+# ==============================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/.nb-gradle/
+build/
+!nbproject/build-impl.xml
+!nbproject/build-impl.xml
+!nbproject/genfiles.properties
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# ==============================
+# Sistema operativo
+# ==============================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+
+# ==============================
+# Archivos temporales
+# ==============================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# ==============================
+# Configuración local
+# ==============================
+
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Archivos generados por ANTLR
+# ==============================
+
+# target/generated-sources/
+
+# ==============================
+# Cobertura / testing
+# ==============================
+
+coverage/
+jacoco.exec

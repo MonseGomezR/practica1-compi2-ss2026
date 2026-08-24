@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.compi2.codexlatinus.gui.controllers.MainController">
+
+    <top>
+        <VBox>
+        <HBox fx:id="barraTitulo" alignment="CENTER_LEFT" spacing="10" styleClass="barra-titulo-custom">
+            <padding><Insets top="6" right="10" bottom="6" left="14"/></padding>
+            <Label text="⚔ CODEX LATINUS" styleClass="titulo-app"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="—" onAction="#minimizarVentana" styleClass="boton-ventana"/>
+            <Button text="✕" onAction="#cerrarVentana" styleClass="boton-ventana boton-cerrar"/>
+        </HBox>
+        <MenuBar>
+            <menus>
+                <Menu text="Archivo">
+                    <items>
+                        <MenuItem text="Nuevo" onAction="#nuevoArchivo"/>
+                        <MenuItem text="Abrir (.lat)" onAction="#abrirArchivo"/>
+                        <MenuItem text="Guardar (.lat)" onAction="#guardarArchivo"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Salir" onAction="#salir"/>
+                    </items>
+                </Menu>
+                <Menu text="Analizar">
+                    <items>
+                        <MenuItem text="Analizar código" onAction="#analizarCodigo"/>
+                    </items>
+                </Menu>
+                <Menu text="Ver">
+                    <items>
+                        <MenuItem text="AST" onAction="#verAst"/>
+                        <MenuItem text="Tabla de símbolos" onAction="#verTablaSimbolos"/>
+                        <MenuItem text="Pila de análisis" onAction="#verPila"/>
+                        <MenuItem text="Traducción PigLatin" onAction="#verPigLatin"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        </VBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.7" orientation="VERTICAL">
+            <items>
+                <StackPane fx:id="contenedorEditor" style="-fx-background-color: #9e3737;"/>
+                <VBox spacing="4">
+                    <padding><Insets top="4" right="4" bottom="4" left="4"/></padding>
+                    <Label text="Consola de errores" style="-fx-font-weight: bold;"/>
+                    <ListView fx:id="listaErrores" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding><Insets top="6" right="10" bottom="6" left="10"/></padding>
+            <Label fx:id="lblEstado" text="Sin analizar"/>
+        </HBox>
+    </bottom>
+</BorderPane>

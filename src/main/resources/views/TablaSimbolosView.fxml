@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.compi2.codexlatinus.gui.controllers.TablaSimboloController">
+    <center>
+        <TableView fx:id="tabla">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="130"/>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100"/>
+                <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="110"/>
+                <TableColumn fx:id="colAmbito" text="Ámbito" prefWidth="220"/>
+                <TableColumn fx:id="colLinea" text="Línea" prefWidth="60"/>
+                <TableColumn fx:id="colColumna" text="Columna" prefWidth="70"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

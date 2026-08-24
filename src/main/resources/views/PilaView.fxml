@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.compi2.codexlatinus.gui.controllers.PilaController">
+    <top>
+        <HBox spacing="10" alignment="CENTER">
+            <padding><Insets top="10" bottom="10"/></padding>
+            <Button text="&lt;" onAction="#anterior"/>
+            <Label fx:id="lblEstado" text="0 / 0"/>
+            <Button text="&gt;" onAction="#siguiente"/>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.5">
+            <items>
+                <ScrollPane fitToWidth="true">
+                    <content>
+                        <VBox fx:id="contenedorPila" alignment="BOTTOM_CENTER" spacing="2">
+                            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+                <VBox spacing="4">
+                    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                    <Label text="Log de operaciones" style="-fx-font-weight: bold;"/>
+                    <ListView fx:id="listaLog" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>
